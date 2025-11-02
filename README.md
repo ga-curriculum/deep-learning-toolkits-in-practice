@@ -5,61 +5,61 @@
 ---
 ## Table of Contents 
 
-1. Introduction to Python for AI  
-2. Setting Up the Development Environment  
-3. Python Essentials for Machine Learning  
-4. Data Handling and Libraries  
-5. Introduction to Git and Version Control  
-6. Working with GitHub  
-7. Lab: Baseline Builder – Logistic Regression (Setup)  
+1. Introduction to Deep Learning Frameworks  
+2. Overview of PyTorch  
+3. Building Models with PyTorch  
+4. Exploring torchvision and Pre-trained Models  
+5. Introduction to Hugging Face and Transformers  
+6. Fine-Tuning Pre-Trained Models  
+7. Lab: Pre-Trained Power-Up — Using Pre-Trained Models for Image Classification  
 8. Wrap-Up and Reflection  
+9. Resources  
 
 ---
 
 ## Learning Objectives
 
 By the end of this module, you'll be able to:
-1. Configure and validate a Python environment for AI development.  
-2. Use Jupyter Notebooks for iterative and reproducible data workflows.  
-3. Apply Python fundamentals to manipulate data and build a baseline ML model.  
-4. Utilize Git and GitHub for version control, collaboration, and portfolio building.  
-5. Document code and share projects effectively in preparation for later modules
-
+1. Identify key deep learning frameworks and their practical applications.
+2. Use **PyTorch** to build, train, and evaluate simple neural network models.
+3. Understand the role of **torchvision** in image-based deep learning workflows.
+4. Work with **Hugging Face Transformers** for natural language and transfer learning tasks.
+5. Fine-tune a pre-trained model for a new dataset and evaluate its performance.
+6. Recognize the trade-offs between building models from scratch vs. using pre-trained architectures.  
 ---
 
 ## Session Breakdown
 
 | Segment | Topic | Duration |
 |----------|--------|----------|
-| 1 | Introduction to Course + Icebreaker | 10 min |
-| 2 | Introduction to Python for AI | 15 min |
-| 3 | Setting Up the Development Environment | 15 min |
-| 4 | Python Essentials for Machine Learning | 20 min |
-| 5 | Data Handling and Libraries | 20 min |
-| 6 | Introduction to Git and Version Control | 15 min |
-| 7 | Working with GitHub | 10 min |
-| 8 | Lab: Baseline Builder – Logistic Regression (Setup) | 10 min |
-| 9 | Wrap-Up and Reflection | 5 min |
+| 1 | Introduction to Deep Learning Frameworks | 10 min |
+| 2 | Overview of PyTorch | 15 min |
+| 3 | Building Models with PyTorch | 20 min |
+| 4 | torchvision and Pre-trained Models | 15 min |
+| 5 | Hugging Face and Transformers | 20 min |
+| 6 | Fine-Tuning Pre-Trained Models | 20 min |
+| 7 | Lab: Pre-Trained Power-Up | 15 min |
+| 8 | Wrap-Up and Reflection | 5 min |
+
 ---
 
-## 1. Introduction to Python for AI (15 min)
+### 1. Introduction to Deep Learning Frameworks
 
-Python is the **lingua franca of artificial intelligence and deep learning** due to its simplicity, readability, and powerful ecosystem of libraries.
+Deep learning frameworks provide the tools to build, train, and deploy neural networks efficiently.  
+They abstract away complex mathematical computations, letting developers focus on experimentation and design.
 
-| Concept | Description | Example |
-|----------|--------------|----------|
-| High-level language | Easy-to-read syntax, close to English | `print("Hello AI!")` |
-| Interpreted | No compilation needed | Run directly in terminal or Jupyter |
-| Versatile | Used in AI, web dev, automation | TensorFlow, Flask, Pandas |
+**Popular Frameworks Comparison**
 
-**Example: Basic Python Syntax**
+| Framework | Language | Best For | Key Feature |
+|------------|-----------|-----------|--------------|
+| **PyTorch** | Python | Research, Prototyping | Dynamic computation graphs |
+| **TensorFlow** | Python | Production, Deployment | TensorBoard, TF Serving |
+| **Keras** | Python | Beginners | High-level API on TensorFlow |
+| **JAX** | Python | Research | Autograd & functional programming |
 
-```python
-# Variables and types
-name = "AI Learner"
-hours = 32
-print(f"Welcome {name}, to {hours} hours of AI training!")
-```
+> 💡 *PyTorch is the preferred framework for this course due to its intuitive design, flexibility, and wide community support.*
+
+
 ---
 
 ## 3. Setting Up the Development Environment (15 min)
