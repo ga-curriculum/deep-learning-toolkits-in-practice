@@ -62,35 +62,25 @@ They abstract away complex mathematical computations, letting developers focus o
 
 ---
 
-## 3. Setting Up the Development Environment (15 min)
+### 2. Overview of PyTorch
 
-Ensure all required tools are installed and verified.
+PyTorch is a **deep learning framework** that allows developers to construct neural networks dynamically using tensors and automatic differentiation.
 
-✅ Required Tools
+**Key Components of PyTorch:**
+- `torch.Tensor` → Core data structure for computation.  
+- `torch.nn` → Module for neural network layers.  
+- `torch.optim` → Optimization algorithms (SGD, Adam).  
+- `torch.utils.data` → Data handling utilities (loaders, transforms).
 
-✅Python 3.9+
+**Code Example: Creating a Tensor**
 
-✅Jupyter Notebooks or VS Code
+```python
+import torch
 
-✅Git and GitHub account
-
-✅Key Libraries: NumPy, Pandas, Matplotlib, Scikit-learn, PyTorch
-
-✅Zoom, Slack, and Chrome (for course delivery)
-
- **Sanity Check**
-
-Run these commands to confirm setup:
-```python --version
-jupyter --version
-git --version
-pip list
-```
-Activity:
-Learners open Jupyter, create a new notebook titled "Module1_Setup.ipynb", and run:
-```
-import numpy, pandas, sklearn
-print("✅ Environment setup complete!")
+x = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)
+print("Tensor:", x)
+print("Shape:", x.shape)
+print("Device:", x.device)
 ```
 ---
 
