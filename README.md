@@ -143,43 +143,52 @@ print(model)
 🧩 Learners will later fine-tune these models during the lab.
 
 ---
-## 6. Introduction to Git and Version Control (15 min)
+### 5. Introduction to Hugging Face and Transformers
 
-Version control helps track changes, collaborate, and revert errors efficiently.
+**Hugging Face** provides ready-to-use implementations of NLP and multimodal models like BERT, GPT, and ViT.
 
-**Key Commands**
-```bash
-git init
-git add .
-git commit -m "Initial commit"
+**Core Components:**
+- **Transformers Library** (`pip install transformers`)
+- **Pipeline API** — Simplifies text classification, summarization, and more.  
+- **Model Hub** — Thousands of open-source pre-trained models.
+
+**Example: Text Classification Pipeline**
+
+```python
+from transformers import pipeline
+
+classifier = pipeline("sentiment-analysis")
+result = classifier("Deep learning with PyTorch is amazing!")
+print(result)
 ```
-**Concepts:**
-
-1.Repository: Project folder with version history
-
-2.Commit: Snapshot of code changes
-
-3.Branch: Separate workspace for experiments
+**Discussion Prompt:**
+How can transfer learning from Hugging Face save development time and computational cost?
 
 ---
-## 7. Working with GitHub (10 min)
+### 6. Fine-Tuning Pre-Trained Models
 
-**Connecting to GitHub**
-```git remote add origin https://github.com/username/repo.git
-git push -u origin main
+Fine-tuning allows you to adapt an existing model to a new dataset or domain, improving performance without extensive training.
+
+**General Steps:**
+1. Load pre-trained model.  
+2. Replace the final classification layer.  
+3. Train on your custom dataset.  
+4. Evaluate and compare results.
+
+**Example: Fine-Tuning a Vision Model**
+
+```python
+from torchvision import models
+import torch.nn as nn
+
+model = models.resnet18(pretrained=True)
+for param in model.parameters():
+    param.requires_grad = False  # Freeze base layers
+
+model.fc = nn.Linear(model.fc.in_features, 10)  # Replace output layer for 10 classes
 ```
-
-**Branching Workflow Example**
-```git checkout -b feature-branch
-# Work on code
-git commit -am "Added data visualization section"
-git checkout main
-git merge feature-branch
-```
-
-**In-Class Collaboration Activity:**
-
-Students pair up and fork a practice repository to make and merge changes.
+**Mini Exercise:**
+Learners update a Hugging Face text classifier to identify emotions instead of sentiment.
 
 ---
 
