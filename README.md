@@ -114,29 +114,34 @@ optimizer = optim.Adam(model.parameters(), lr=0.01)
 Discuss how changing activation functions (ReLU, Sigmoid, Tanh) affects model performance.
 
 ---
-## 5. Data Handling and Libraries (20 min)
+### 4. Exploring torchvision and Pre-Trained Models
 
-**Focus:** Core libraries for AI and ML workflows.
+`torchvision` simplifies computer vision workflows by providing:
+- Pre-loaded datasets (MNIST, CIFAR-10, ImageNet)
+- Data augmentation and preprocessing utilities
+- Pre-trained models (ResNet, VGG, MobileNet)
 
-| Library | Purpose | Example |
-|----------|----------|----------|
-| **NumPy** | Numerical computation | `np.mean(arr)` |
-| **Pandas** | Data manipulation | `df.describe()` |
-| **Matplotlib** | Visualization | `plt.plot()` |
+**Example: Using torchvision Datasets**
 
-**Follow-Along Code:**
 ```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
+from torchvision import datasets, transforms
 
-data = np.random.randn(100)
-df = pd.DataFrame({'values': data})
-plt.hist(df['values'], bins=20)
-plt.title("Random Data Distribution")
-plt.show()
-Copy code
+transform = transforms.Compose([
+    transforms.Resize(32),
+    transforms.ToTensor()
+])
+
+train_data = datasets.MNIST(root='./data', train=True, download=True, transform=transform)
+print("Training samples:", len(train_data))
 ```
+**Using Pre-Trained Models**
+```from torchvision import models
+model = models.resnet18(pretrained=True)
+print(model)
+```
+
+🧩 Learners will later fine-tune these models during the lab.
+
 ---
 ## 6. Introduction to Git and Version Control (15 min)
 
