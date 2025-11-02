@@ -1,4 +1,4 @@
-# Foundations in Python and Git for AI
+# Deep Learning Toolkits in Practice
 
 **Session Time:** 120 minutes
 
