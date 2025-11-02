@@ -192,30 +192,37 @@ Learners update a Hugging Face text classifier to identify emotions instead of s
 
 ---
 
-## 8. Lab: Baseline Builder – Logistic Regression (Setup) (10 min)
+### 7. Lab: Pre-Trained Power-Up — Image Classification
 
-**Objective:** Implement your first ML model using Scikit-learn.
+**Objective:**  
+Use a pre-trained convolutional neural network to classify images and evaluate its performance.
 
-```from sklearn.datasets import load_digits
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
+**Steps:**
+1. Load the CIFAR-10 dataset.  
+2. Use a pre-trained ResNet model.  
+3. Replace the output layer for CIFAR-10’s 10 classes.  
+4. Train for a few epochs.  
+5. Evaluate and visualize predictions.
 
+**Sample Code Snippet:**
 
-X, y = load_digits(return_X_y=True)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
-model = LogisticRegression(max_iter=1000)
-model.fit(X_train, y_train)
+```python
+from torchvision import models, transforms, datasets
+import torch.optim as optim
+import torch.nn as nn
 
-pred = model.predict(X_test)
-print("Baseline Accuracy:", accuracy_score(y_test, pred))
+transform = transforms.Compose([transforms.Resize(224), transforms.ToTensor()])
+trainset = datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)
+trainloader = torch.utils.data.DataLoader(trainset, batch_size=32, shuffle=True)
+
+model = models.resnet18(pretrained=True)
+model.fc = nn.Linear(model.fc.in_features, 10)
+
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.001)
 ```
-
-
-**Discussion:**
-
-1. What does the model learn?
-2. How can we improve this baseline in later modules (hint: neural networks)?
+**Group Activity:**
+Teams compare results between training from scratch and fine-tuning a pre-trained model.
 
 ---
    
