@@ -84,29 +84,35 @@ print("Device:", x.device)
 ```
 ---
 
-## 4. Python Essentials for Machine Learning (20 min)
-**Key Topics**
-1. Variables, data types, lists, dictionaries, and loops
-2. Writing and calling functions
-3. Handling exceptions and debugging
+### 3. Building Models with PyTorch
 
-**Example:**
-```
-def normalize(data):
-    """Return normalized values between 0 and 1."""
-    return (data - data.min()) / (data.max() - data.min())
+A typical deep learning workflow in PyTorch includes defining the model, specifying a loss function and optimizer, and running a training loop.
 
-import pandas as pd
-scores = pd.Series([10, 15, 20, 25])
-print(normalize(scores))
+**Basic Model Example:**
+
+```python
+import torch.nn as nn
+import torch.optim as optim
+
+class SimpleModel(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.fc1 = nn.Linear(4, 8)
+        self.fc2 = nn.Linear(8, 3)
+    
+    def forward(self, x):
+        x = torch.relu(self.fc1(x))
+        x = self.fc2(x)
+        return x
+
+model = SimpleModel()
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.01)
 ```
 
-**Mini Exercise:**
-Write a function that squares each number in a list and returns the new list.
-```
-numbers = [2, 4, 6]
-# Output: [4, 16, 36]
-```
+**Mini Activity:**
+Discuss how changing activation functions (ReLU, Sigmoid, Tanh) affects model performance.
+
 ---
 ## 5. Data Handling and Libraries (20 min)
 
