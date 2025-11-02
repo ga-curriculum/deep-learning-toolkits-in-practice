@@ -226,25 +226,27 @@ Teams compare results between training from scratch and fine-tuning a pre-traine
 
 ---
    
-## 9. Wrap-Up and Reflection (5 min)
+## Wrap-Up and Reflection
 
-**Group Discussion:**
-1. What challenges did you face while setting up your environment?
-2. Which Python concept felt most familiar or new to you?
-3. How does Git enhance collaboration in AI projects?
+**Reflection Prompts:**
+1. How does using frameworks like PyTorch accelerate experimentation?  
+2. What are the trade-offs between building models from scratch vs. transfer learning?  
+3. How might Hugging Face simplify NLP-based workflows in real-world projects?  
+4. What toolkit did you find most intuitive today and why?
 
-**Instructor Notes:**
-1. Reiterate learning outcomes achieved.
-2. Preview next module: Deep Learning with PyTorch.
+**Instructor Tip:**  
+Encourage learners to share their experience with fine-tuning models on Slack to promote collaboration and peer learning.
 
 ---
 
-## Resources 
-- [Python Official Docs](https://docs.python.org/3/)  
-- [NumPy Quickstart](https://numpy.org/doc/stable/user/quickstart.html)  
-- [Pandas Documentation](https://pandas.pydata.org/docs/)  
-- [Matplotlib Tutorials](https://matplotlib.org/stable/tutorials/)  
-- [Scikit-learn User Guide](https://scikit-learn.org/stable/user_guide.html)  
-- [Git Documentation](https://git-scm.com/doc)  
-- [GitHub Guides](https://guides.github.com/)  
-- [General Assembly Student Setup Guide](https://generalassemb.ly)
+## Resources
+
+- [PyTorch Official Documentation](https://pytorch.org/docs/stable/index.html)  
+- [torchvision Library Reference](https://pytorch.org/vision/stable/index.html)  
+- [Hugging Face Transformers](https://huggingface.co/transformers/)  
+- [PyTorch Tutorials](https://pytorch.org/tutorials/)  
+- [Transfer Learning with PyTorch](https://pytorch.org/tutorials/beginner/finetuning_torchvision_models_tutorial.html)  
+- [Hugging Face Model Hub](https://huggingface.co/models)  
+- [Deep Learning with PyTorch Book (Manning)](https://www.manning.com/books/deep-learning-with-pytorch)  
+- [CIFAR-10 Dataset Info](https://www.cs.toronto.edu/~kriz/cifar.html)
+
