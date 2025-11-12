@@ -220,30 +220,50 @@ print(result)
 ```
 ---
 
-### 8. Fine-Tuning Pre-Trained Models
-Fine-tuning is the process of adapting an existing pre-trained model to a new, specific dataset. This is the most common and effective way to use large models.
+## 8. Model Cards
+Think of a **model card** like a **nutritional label for an AI model**.
 
-**General Steps:**
-1. Load a pre-trained model.
-2. Replace the final classification layer (the "head") with a new one matching your task's number of classes.
-3. Freeze the weights of the base model (so only the new head is trained).
-4. Train the model on your custom dataset.
+![Model Card Eg](./assets/model-card-eg.png)
 
-```python
-from torchvision import models
-import torch.nn as nn
+It provides structured documentation:
+- model purpose.
+- limitations, biases.
+- training data.
+- performance.
 
-# 1. Load pre-trained model
-model = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
+It helps users determine if a model is **safe and appropriate** for their use case.
 
-# 2. Freeze base layers (optional, but common)
-for param in model.parameters():
-    param.requires_grad = False
+### Key Parts of a Model Card
 
-# 3. Replace the output layer (which was for 1000 ImageNet classes)
-#    with a new layer for 10 classes.
-model.fc = nn.Linear(model.fc.in_features, 10)
-```
+Most model cards include:
+1. **Model Name & Purpose** – What problem does it solve?
+2. **Training Data** – Where did the data come from? Is it biased?
+3. **Evaluation Metrics** – How well does it perform?
+4. **Limitations & Risks** – Where does it fail? Potential biases?
+5. **Intended Use** – Who should (or shouldn't) use it?
+
+> **Example**: A face recognition model might perform well on lighter-skinned individuals but poorly on darker-skinned individuals due to dataset bias.
+
+### CASE STUDIES - Example Model Card: BERT
+- Take a look at [BERT’s Model Card on Huggingface.](https://huggingface.co/google-bert/bert-base-uncased)
+- Find one piece of information on this model card that would make you more (or less) confident about using this model. 
+
+### GUIDED WALKTHROUGH - Model Cards
+Let’s see it for ourselves!
+- Open huggingface-model-card-example-xxxx.ipynb
+- Examine a state-of-the-art model from huggingface transformers library that has a business application. 
+- Install it locally and test out running it. 
+
+- How could you use the NLP example for a business application? 
+- What about the computer vision example? 
+
+### Why do Model Cards matter? 
+
+![Model Card Eg](./assets/model-card-matter.png)
+
+One of Google’s computer vision products was found to have racial bias because it was trained on datasets lacking diversity.
+
+> Would a model card have helped?
 
 ---
 
