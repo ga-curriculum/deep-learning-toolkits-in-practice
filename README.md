@@ -272,13 +272,8 @@ One of Google’s computer vision products was found to have racial bias because
 **Objective:**
 Use a pre-trained convolutional neural network to classify images and evaluate its performance.
 
-**Steps:**
-
-1.  Load the CIFAR-10 dataset using `torchvision`.
-2.  Use a pre-trained ResNet model.
-3.  Replace the output layer for CIFAR-10’s 10 classes.
-4.  Train *only* the new output layer for a few epochs.
-5.  Evaluate and visualize predictions.
+**Refer:**
+[Pre-Trained Power-Up](https://git.generalassemb.ly/applied-ai-and-deep-learning-in-action/Lab-2_2-Pre-trained-Power-up)
 
 ---
 
