@@ -136,4 +136,4 @@ For teaching notes, preparation steps, and facilitation guidance, see:
 
 * [PyTorch Official Documentation](https://pytorch.org/docs/stable/index.html)
 * [Hugging Face Transformers](https://huggingface.co/transformers/)
-* [Lab: Pre-Trained Power-Up](https://git.generalassemb.ly/applied-ai-and-deep-learning-in-action/Lab-2_2-Pre-trained-Power-up)
+* [Lab: Pre-Trained Power-Up](https://github.com/ga-curriculum/lab-2-2-pre-trained-power-up)
