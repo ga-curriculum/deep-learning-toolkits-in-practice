@@ -273,7 +273,7 @@ One of Google’s computer vision products was found to have racial bias because
 Use a pre-trained convolutional neural network to classify images and evaluate its performance.
 
 **Refer:**
-[Pre-Trained Power-Up](https://git.generalassemb.ly/applied-ai-and-deep-learning-in-action/Lab-2_2-Pre-trained-Power-up)
+[Pre-Trained Power-Up](https://github.com/ga-curriculum/lab-2-2-pre-trained-power-up)
 
 ---
 
